@@ -1,8 +1,6 @@
 <?php
 	error_reporting(0);
-	require_once "lib/markdown.php";
-	require_once "lib/config.php";
-	require_once "lib/functions.php";
+	require_once "lib/MarkdownWiki.php";
 
 	if(isset($_GET['action'])) {
 		if($_GET['action']=='edit') {
@@ -25,16 +23,8 @@
 ?><!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title><?php echo $title; ?> | Strabo</title>
-
-	<link rel="stylesheet" href="<?php echo $prefix; ?>/style.css" type="text/css"/>
-	<link rel="apple-touch-icon" href="<?php echo $prefix; ?>/touch-icon-iphone.png" />
-	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo $prefix; ?>/touch-icon-ipad.png" />
-	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo $prefix; ?>/touch-icon-iphone4.png" />
-	<link rel="shortcut-icon" href="<?php echo $prefix; ?>/favicon.ico"></link>
-
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+	<title><?php echo $title ?> | Strabo</title>
+	<?php get_head(); ?>
 
 	<script src="<?php echo $prefix; ?>/js/script.js" type="text/javascript" charset="utf-8"></script>
 	<script src="<?php echo $prefix; ?>/js/ace.js" type="text/javascript" charset="utf-8"></script>

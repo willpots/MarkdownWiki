@@ -1,5 +1,15 @@
 <?php
 
+// Config Goes Here
+//	$prefix = ""; // Null By Default, Absolute Server Path
+	$prefix = "/wiki";
+
+//Relative Path from server dir
+	$md_dir = "./files"; // Default
+
+
+
+
 function print_file($file,$print=false) {
 
 	$file = ucwords(str_replace('_',' ',substr($file,0,-3)));
@@ -26,5 +36,41 @@ function titleify($title,$print=false) {
 		echo $title;
 	return $title;
 
+}
+function get_head() {
+	global $prefix, $md_dir;
+?>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="<?php echo $prefix; ?>/style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php echo $prefix; ?>/handheld.css" type="text/css" media="handheld"/>
+
+	<link rel="apple-touch-icon" href="<?php echo $prefix; ?>/touch-icon-iphone.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo $prefix; ?>/touch-icon-ipad.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo $prefix; ?>/touch-icon-iphone4.png" />
+	<link rel="shortcut-icon" href="<?php echo $prefix; ?>/favicon.ico"></link>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<?php
+}
+
+
+function get_header() {
+	global $prefix, $md_dir;
+
+?>
+
+
+
+<?php
+}
+
+function get_footer() {
+	global $prefix, $md_dir;
+?>
+
+
+
+<?php
 }
 ?>

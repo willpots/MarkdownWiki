@@ -1,7 +1,5 @@
 <?php
-require_once "lib/markdown.php";
-require_once "lib/config.php";
-require_once "lib/functions.php";
+require_once "lib/MarkdownWiki.php";
 
 if(isset($_GET['p'])) {
 

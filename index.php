@@ -35,6 +35,7 @@
 <body>
 <header id="main_header">
 	<a href="/wiki">Home</a>
+	<a href="/wiki/new">New</a>
 <!-- 	<a href="/wiki/add_page">New</a> -->
 	<?php if($page!='home') { ?>
 	<a href="/wiki/<?php echo $page; ?>/edit">Edit</a>

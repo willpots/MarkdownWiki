@@ -134,8 +134,10 @@ pre code {
 	color: white;
 	box-shadow: 0px 0px 3px #333;
 }
+#main_header a,
 #main_header a:link,
 #main_header a:visited {
+	cursor: pointer;
 	display: inline-block;
 	text-shadow: 1px 1px 1px #333;
 	padding: 10px 20px;
@@ -151,6 +153,7 @@ pre code {
 	border-top:1px solid #333;
 	padding: 4px;
 }
+#main_footer a,
 #main_footer a:link,
 #main_footer a:visited {
 

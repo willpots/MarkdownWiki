@@ -4,7 +4,8 @@ if(isset($_GET['p'])) {
 	if($_POST['content']=="") {
 
 	} else if(isset($_POST['content'])){
-		$page=strtolower($page);
+		$page = strtolower(str_replace(' ','_',$page));
+
 		$fh = fopen('files/'.$page.'.md','w');
 		fwrite($fh, $_POST['content']);
 		fclose($fh);

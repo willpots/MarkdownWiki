@@ -19,6 +19,12 @@ function print_title($title,$print=false) {
 	if($print==true)
 		echo $file;
 	return $file;
+}
+function titleify($title,$print=false) {
+	$title = strtolower(str_replace(' ','_',$title));
+	if($print==true)
+		echo $title;
+	return $title;
 
 }
 ?>

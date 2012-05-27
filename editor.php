@@ -56,7 +56,7 @@
 	<input type="text" id="page_name" placeholder="Document Name...">
 <?php } else { ?>
 	<input type="hidden" value="<?php echo $page ?>" id="page_name">
-	<h2><?php echo $page; ?></h2>
+	<h2><?php echo print_title($page); ?></h2>
 <?php } ?>
 
 	<div id="editor"><?php echo $contents;  ?></div>

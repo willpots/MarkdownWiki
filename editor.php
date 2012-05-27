@@ -1,6 +1,7 @@
 <?php
 	error_reporting(0);
 	require_once "lib/markdown.php";
+	require_once "lib/config.php";
 	require_once "lib/functions.php";
 
 	if(isset($_GET['action'])) {
@@ -10,7 +11,7 @@
 	} else $edit = false;
 	if(isset($_GET['p'])) {
 		$page=$_GET['p'];
-		$contents=file_get_contents('files/'.$page.'.md');
+		$contents=file_get_contents("$md_dir/$page.md");
 		if($contents==false)
 			$contents = "";
 		$new = false;
@@ -27,11 +28,11 @@
 	<meta charset="utf-8">
 	<title><?php echo $title; ?> | Strabo</title>
 
-	<link rel="stylesheet" href="/wiki/style.css" type="text/css"/>
+	<link rel="stylesheet" href="<?php echo $prefix; ?>/style.css" type="text/css"/>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
-	<script src="/wiki/js/script.js" type="text/javascript" charset="utf-8"></script>
-	<script src="/wiki/js/ace.js" type="text/javascript" charset="utf-8"></script>
-	<script src="/wiki/js/mode-markdown.js" type="text/javascript" charset="utf-8"></script>
+	<script src="<?php echo $prefix; ?>/js/script.js" type="text/javascript" charset="utf-8"></script>
+	<script src="<?php echo $prefix; ?>/js/ace.js" type="text/javascript" charset="utf-8"></script>
+	<script src="<?php echo $prefix; ?>/js/mode-markdown.js" type="text/javascript" charset="utf-8"></script>
     <script>
     var editor;
     window.onload = function() {
@@ -46,9 +47,9 @@
 </head>
 <body>
 <header id="main_header">
-	<a href="/wiki">Home</a>
-	<a href="/wiki/new">New</a>
-	<a href="/wiki/<?php echo $page; ?>">Back</a>
+	<a href="<?php echo $prefix; ?>">Home</a>
+	<a href="<?php echo $prefix; ?>/new">New</a>
+	<a href="<?php echo $prefix; ?>/<?php echo $page; ?>">Back</a>
 	<a id="save" >Save</a>
 	<a href="/wiki/<?php echo $page; ?>/delete">Delete</a>
 </header>

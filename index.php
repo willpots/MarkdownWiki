@@ -1,16 +1,17 @@
 <?php
 	error_reporting(0);
 	require_once "lib/markdown.php";
+	require_once "lib/config.php";
 	require_once "lib/functions.php";
 	if(isset($_GET['p'])) {
 		$page=$_GET['p'];
-		$contents=file_get_contents('files/'.$page.'.md');
+		$contents=file_get_contents("$md_dir/$page.md");
 		if($contents==false)
 			$contents = file_get_contents('404.md');
 		$contents=Markdown($contents);
 	} else {
 		$page='home';
-		$contents=Markdown(file_get_contents('files/home.md'));
+		$contents=Markdown(file_get_contents("$md_dir/$page.md"));
 		if ($handle = opendir('files/')) {
 			$contents.='<h2>Pages</h2><ul>';
 
@@ -34,11 +35,11 @@
 </head>
 <body>
 <header id="main_header">
-	<a href="/wiki">Home</a>
-	<a href="/wiki/new">New</a>
+	<a href="<?php echo $prefix; ?>">Home</a>
+	<a href="<?php echo $prefix; ?>/new">New</a>
 <!-- 	<a href="/wiki/add_page">New</a> -->
 	<?php if($page!='home') { ?>
-	<a href="/wiki/<?php echo $page; ?>/edit">Edit</a>
+	<a href="<?php echo $prefix; ?>/<?php echo $page; ?>/edit">Edit</a>
 	<?php } ?>
 </header>
 <?php echo $contents;  ?>

@@ -29,7 +29,13 @@
 	<title><?php echo $title; ?> | Strabo</title>
 
 	<link rel="stylesheet" href="<?php echo $prefix; ?>/style.css" type="text/css"/>
+	<link rel="apple-touch-icon" href="<?php echo $prefix; ?>/touch-icon-iphone.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo $prefix; ?>/touch-icon-ipad.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo $prefix; ?>/touch-icon-iphone4.png" />
+	<link rel="shortcut-icon" href="<?php echo $prefix; ?>/favicon.ico"></link>
+
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+
 	<script src="<?php echo $prefix; ?>/js/script.js" type="text/javascript" charset="utf-8"></script>
 	<script src="<?php echo $prefix; ?>/js/ace.js" type="text/javascript" charset="utf-8"></script>
 	<script src="<?php echo $prefix; ?>/js/mode-markdown.js" type="text/javascript" charset="utf-8"></script>

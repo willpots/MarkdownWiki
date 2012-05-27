@@ -1,6 +1,7 @@
 <?php
 	error_reporting(0);
 	require_once "lib/markdown.php";
+	require_once "lib/functions.php";
 	if(isset($_GET['p'])) {
 		$page=$_GET['p'];
 		$contents=file_get_contents('files/'.$page.'.md');
@@ -8,20 +9,20 @@
 			$contents = file_get_contents('404.md');
 		$contents=Markdown($contents);
 	} else {
-		$page='main';
-		$contents="No files exist!";
+		$page='home';
+		$contents=Markdown(file_get_contents('files/home.md'));
 		if ($handle = opendir('files/')) {
-			$contents='<h1>Articles</h1><ul>';
+			$contents.='<h2>Pages</h2><ul>';
 
 		    while (false !== ($entry = readdir($handle))) {
-		    	if($entry!='..'&&$entry!='.')
-			        $contents .= '<li><a href="'.substr($entry,0,-3).'/">'.ucwords(substr($entry,0,-3)).'</a></li>';
+		    	if($entry!='..'&&$entry!='.'&&$entry!='home.md')
+			        $contents .= '<li><a href="'.link_file($entry).'/">'.print_file($entry).'</a></li>';
 		    }
 		    $contents.='</ul>';
 		    closedir($handle);
 		}
 	}
-	$title=ucwords($page);
+	$title=print_title($page);
 
 ?><!DOCTYPE html>
 <html>
@@ -32,6 +33,16 @@
 	<link rel="stylesheet" href="/wiki/style.css" type="text/css"/>
 </head>
 <body>
+<header id="main_header">
+	<a href="/wiki">Home</a>
+<!-- 	<a href="/wiki/add_page">New</a> -->
+	<?php if($page!='home') { ?>
+	<a href="/wiki/<?php echo $page; ?>/edit">Edit</a>
+	<?php } ?>
+</header>
 <?php echo $contents;  ?>
+<footer id="main_footer">
+created with love by <a href="http://twitter.com/willpots">@willpots</a>
+</footer>
 </body>
 </html>

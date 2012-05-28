@@ -51,6 +51,7 @@ function get_head() {
 	<link rel="shortcut-icon" href="<?php echo $prefix; ?>/favicon.ico"></link>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+	<script src="<?php echo $prefix; ?>/js/script.js" type="text/javascript" charset="utf-8"></script>
 <?php
 }
 

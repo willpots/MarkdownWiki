@@ -25,20 +25,10 @@
 <head>
 	<title><?php echo $title ?> | Strabo</title>
 	<?php get_head(); ?>
-
-	<script src="<?php echo $prefix; ?>/js/script.js" type="text/javascript" charset="utf-8"></script>
-	<script src="<?php echo $prefix; ?>/js/ace.js" type="text/javascript" charset="utf-8"></script>
-	<script src="<?php echo $prefix; ?>/js/mode-markdown.js" type="text/javascript" charset="utf-8"></script>
-    <script>
-    var editor;
-    window.onload = function() {
-        editor = ace.edit("editor");
-		var MarkdownMode = require("ace/mode/markdown").Mode;
-		editor.getSession().setMode(new MarkdownMode());
-		editor.getSession().setUseWrapMode(true);
-    };
-
-    </script>
+	<script src="<?php echo $prefix; ?>/src/ace.js" type="text/javascript" charset="utf-8"></script>
+	<script src="<?php echo $prefix; ?>/src/mode-markdown.js" type="text/javascript" charset="utf-8"></script>
+    <script src="<?php echo $prefix; ?>/src/theme-twilight.js" type="text/javascript" charset="utf-8"></script>
+	<script src="<?php echo $prefix; ?>/js/editor.js" type="text/javascript" charset="utf-8"></script>
 
 </head>
 <body>

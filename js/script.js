@@ -4,6 +4,10 @@ $(document).ready(function() {
 		console.log("Saving");
 		saveContents();
 	});
+	$("a[href^='http:']:not([href*='" + window.location.host + "'])").each(function() {
+	        $(this).attr("target", "_blank");
+	    });
+	})
 });
 function saveContents() {
 	var page_name = document.getElementById('page_name').value;
@@ -27,5 +31,10 @@ function saveContents() {
 		};
 		ajax.open("POST", "/wiki/save.php?p="+page_name);
 		ajax.send(form);
+	}
+}
+function deleteDocument(path) {
+	if(confirm("Are you sure you want to permanantly delete this document?")) {
+		window.location=path;
 	}
 }

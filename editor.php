@@ -47,7 +47,7 @@
 	<a href="<?php echo $prefix; ?>/new">New</a>
 	<a href="<?php echo $prefix; ?>/<?php echo $page; ?>">Back</a>
 	<a id="save" >Save</a>
-	<a href="/wiki/<?php echo $page; ?>/delete">Delete</a>
+	<a href="javascript:deleteDocument('/wiki/<?php echo $page; ?>/delete');">Delete</a>
 </header>
 <?php if($new) { ?>
 	<input type="text" id="page_name" placeholder="Document Name...">

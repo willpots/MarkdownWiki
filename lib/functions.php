@@ -41,6 +41,7 @@ function get_head() {
 	global $prefix, $md_dir;
 ?>
 	<meta charset="utf-8">
+	<link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="<?php echo $prefix; ?>/style.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="<?php echo $prefix; ?>/handheld.css" type="text/css" media="handheld"/>

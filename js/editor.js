@@ -16,16 +16,16 @@ $(document).ready(function() {
 		saveContents();
 	});
 
-	$(document).keyup(function(e) {
-		isCtrl=false;
-	}).keydown(function(e) {
-		if(e.metaKey||e.ctrlKey) isCtrl=true;
-		if(e.which == 83 && isCtrl == true) {
-			saveContents();
-			return false;
-		}
+	editor.commands.addCommand({
+	    name: 'save',
+	    bindKey: {
+	        win: 'Ctrl-S',
+	        mac: 'Command-S'
+	    },
+	    exec: function(editor) {
+		    saveContents();
+	    }
 	});
-
 });
 
 

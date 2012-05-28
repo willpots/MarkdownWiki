@@ -41,8 +41,6 @@
 </header>
 <h2><?php if($page!='home') echo print_title($page); ?></h2>
 <?php echo $contents;  ?>
-<footer id="main_footer">
-created with love by <a href="http://twitter.com/willpots">@willpots</a>
-</footer>
+<?php get_footer(); ?>
 </body>
 </html>

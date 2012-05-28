@@ -70,9 +70,11 @@ function get_header() {
 function get_footer() {
 	global $prefix, $md_dir;
 ?>
-
-
-
+<footer id="main_footer">
+<p>created with love by <a href="http://twitter.com/willpots">@willpots</a>.</p>
+<p>Content &copy; 2012, Strabo, LLC. </p>
+<p>Markdown Wiki is released under MIT License and the source code is available <a href="https://github.com/willpots/MarkdownWiki">here</a>.</p>
+</footer>
 <?php
 }
 ?>
